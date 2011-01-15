@@ -6,22 +6,19 @@ Requires at least: 3.0
 Tested up to: 3.1.0
 Stable tag: 0.4.0
 
-Adds a posts (or pages) list of your blog pages (not posts) by entering the shortcode [posts-list].
+Adds a posts (or pages) list of your blog pages (or posts) by entering the shortcode [posts-list].
 
 == Description ==
 
-Adds a posts (or pages) list of your blog pages (not posts) by entering the shortcode [posts-list].
+Adds a posts (or pages) list of your blog pages (or posts) by entering the shortcode [posts-list].
 
 First example shows how to add the posts list in its simplest form.
-
 `[posts-list]`
 
 Example shortcode will add a pages list to a page.
-
 `[posts-list type=page]`
 
 Example shortcode will add a posts list to a page displaying a year 2011 and 2010.
-
 `[posts-list year="2011,2010"]`
 
 == Installation ==
@@ -42,5 +39,5 @@ Example shortcode will add a posts list to a page displaying a year 2011 and 201
 
 == Changelog == 
 
-**0.4.0 - Jan. 13, 2011**  
+**0.4.0 - Jan. 14, 2011**  
 Initial release.
