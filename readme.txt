@@ -21,6 +21,9 @@ Example shortcode will add a pages list to a page.
 Example shortcode will add a posts list to a page displaying a year 2011 and 2010.
 `[posts-list year="2011,2010"]`
 
+Example shortcode will add a posts list to a page displaying a category id 10 and 11.
+`[posts-list category="10,11"]`
+
 == Installation ==
 
 1. Upload the entire `posts-list` folder to the `/wp-content/plugins/` directory.
@@ -35,6 +38,7 @@ Example shortcode will add a posts list to a page displaying a year 2011 and 201
 * date_format : see [PHP date format](http://jp.php.net/manual/en/function.date.php)
 * year : filtering year
 * month : filtering month
+* category : filtering category id
 
 
 == Changelog == 
