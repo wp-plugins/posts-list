@@ -3,7 +3,7 @@
 Plugin Name: Posts List
 Plugin URI: http://wppluginsj.sourceforge.jp/posts-list/
 Description: Adds a posts (or pages) list of your blog pages (not posts) by entering the shortcode [posts-list].
-Version: 0.4.0
+Version: 0.4.1
 Author: wokamoto
 Author URI: http://dogmap.jp/
 Text Domain: 
@@ -58,14 +58,17 @@ class posts_list {
 			'expiration' => 300,
 			), $atts) );
 
-		$transient  = 'posts-list-' . md5($type . $sort . $style . $date_format . $year . $month . $category . $class_list . $class_item);
+		if (strtolower($date_format) === 'false')
+			$date_format = FALSE;
+
+		$transient  = 'posts-list-' . md5($type . $sort . $style . ($date_format ? $date_format : '') . $year . $month . $category . $class_list . $class_item);
 		if (false !== ($return_text = get_transient($transient))) {
 			return $return_text;
 		}
 
 		$return_text = '';
 		$list_before = '';
-		$list_template = '%s: <a title="%s" href="%s">%s</a>';
+		$list_template = '%s<a title="%s" href="%s">%s</a>';
 		$list_after = '';
 		$expiration = (is_numeric($expiration) ? $expiration : 5 * 60);
 
@@ -171,7 +174,7 @@ class posts_list {
 		if (count($posts) > 0) {
 			$return_text = $list_before;
 			foreach ( $posts as $post ) {
-				$post_date = mysql2date($date_format, $post->post_date);
+				$post_date = $date_format ? mysql2date($date_format, $post->post_date) . ': ' : '';
 				$permalink = $this->get_permalink($type, $post);
 				$post_title = trim($post->post_title);
 				$return_text .= sprintf(
