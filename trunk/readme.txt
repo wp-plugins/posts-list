@@ -3,7 +3,7 @@ Contributors: wokamoto
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=9S8AJCY7XB8F4&lc=JP&item_name=WordPress%20Plugins&item_number=wp%2dplugins&currency_code=JPY&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 Tags: archive, list, navigation, page, posts, short code
 Requires at least: 3.0
-Tested up to: 3.2.1
+Tested up to: 3.5.1
 Stable tag: 0.4.2
 
 Adds a posts (or pages) list of your blog pages (or posts) by entering the shortcode [posts-list].
